@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'FileUploadController@home');
-Route::post('/upload', 'FileUploadController@upload');
+Route::post('/newfile', 'FileUploadController@upload');
