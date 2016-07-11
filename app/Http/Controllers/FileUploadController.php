@@ -39,4 +39,10 @@ class FileUploadController extends Controller
 
       return response()->download($file);
     }
+
+    public function delete ($filename)
+    {
+      Storage::disk('public')->delete($filename);
+      return back();
+    }
 }
