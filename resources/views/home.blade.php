@@ -8,9 +8,10 @@
   <body>
     <div class = "container">
       <h3>File Upload Manager</h3>
-      <form action="/upload" enctype="multipart/form-data" method="post">
+      <form action="/newfile" enctype="multipart/form-data" method="post">
         <div class = "form-group"><input type="file" class = "form-control" name="fileUpload"></div>
         <div class = "form-group"><input type="submit" class = "btn btn-primary" value="Upload new file"></div>
+        {{csrf_field()}}
       </form>
     </div>
   </body>
