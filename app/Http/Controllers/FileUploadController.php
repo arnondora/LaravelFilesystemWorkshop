@@ -23,9 +23,20 @@ class FileUploadController extends Controller
     {
       //upload file
       $fileName = Input::file('fileUpload')->getClientOriginalName();
-      Storage::disk('public')->put($fileName, Input::file('fileUpload'));
+      Storage::disk('public')->put($fileName, File::get(Input::file('fileUpload')));
 
       // print_r($fileName);
       return back();
+    }
+
+    public function download ($filename)
+    {
+      if(!Storage::disk('public')->has($filename)) abort(404);
+
+      $storagePath  = Storage::disk('public')->getDriver()->getAdapter()->getPathPrefix();
+
+      $file = $storagePath . $filename;
+
+      return response()->download($file);
     }
 }

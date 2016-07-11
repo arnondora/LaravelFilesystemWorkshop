@@ -13,3 +13,4 @@
 
 Route::get('/', 'FileUploadController@home');
 Route::post('/newfile', 'FileUploadController@upload');
+Route::get('/download/{filename}', 'FileUploadController@download');
