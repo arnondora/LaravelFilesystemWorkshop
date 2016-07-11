@@ -19,12 +19,14 @@
         <tr>
           <td>File Name</td>
           <td>Download Link</td>
+          <td>Delete File</td>
         </tr>
 
         @foreach($Files as $file)
           <tr>
             <td>{{$file}}</td>
             <td><a href="/download/{{$file}}">Download</a></td>
+            <td><a href="/delete/{{$file}}">Delete This File</a></td>
           </tr>
         @endforeach
       </table>
