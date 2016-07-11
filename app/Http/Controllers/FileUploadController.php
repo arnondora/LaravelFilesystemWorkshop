@@ -16,7 +16,7 @@ class FileUploadController extends Controller
 {
     public function home ()
     {
-      return view ('home');
+      return view ('home', ['Files' => Storage::disk('public')->files()]);
     }
 
     public function upload ()
